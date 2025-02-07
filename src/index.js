@@ -1,11 +1,11 @@
-function capitalize(string){
+function capitalize(string) {
   let firstLetter = string[0].toUpperCase();
   return firstLetter + string.slice(1);
 }
 
-function reverseString(string){
+function reverseString(string) {
   let reverse = "";
-  for(let i = string.length - 1; i > -1; i--){
+  for (let i = string.length - 1; i > -1; i--) {
     reverse += string[i];
     console.log(reverse);
   }
@@ -27,18 +27,18 @@ const calculator = {
   },
 };
 
-function caesarCipher(string, shift){
+function caesarCipher(string, shift) {
   let charCodes = [];
-  for(let i = 0; i < string.length; i++){
+  for (let i = 0; i < string.length; i++) {
     let charCode = string.charCodeAt(i);
-    if(charCode >= 97 && charCode <= 122){
-      if(charCode + shift > 122){
+    if (charCode >= 97 && charCode <= 122) {
+      if (charCode + shift > 122) {
         charCode = charCode + shift - 26;
       } else {
         charCode = charCode + shift;
       }
-    } else if(charCode >= 65 && charCode <= 90) {
-      if(charCode + shift > 90){
+    } else if (charCode >= 65 && charCode <= 90) {
+      if (charCode + shift > 90) {
         charCode = charCode + shift - 26;
       } else {
         charCode = charCode + shift;
@@ -49,28 +49,28 @@ function caesarCipher(string, shift){
   return String.fromCharCode(...charCodes);
 }
 
-function analyzeArray(array){
+function analyzeArray(array) {
   let total = 0;
   let minResult = array[0];
   let maxResult = array[0];
 
-  for(let i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++) {
     total += array[i];
-    if(array[i] > maxResult){
+    if (array[i] > maxResult) {
       maxResult = array[i];
-    } else if (array[i] < minResult){
+    } else if (array[i] < minResult) {
       minResult = array[i];
     }
   }
 
   const results = {
-    average: total/array.length,
+    average: total / array.length,
     min: minResult,
     max: maxResult,
-    length: array.length
+    length: array.length,
   };
 
   return results;
 }
 
-export { capitalize, reverseString, calculator, caesarCipher, analyzeArray }
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
